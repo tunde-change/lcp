@@ -119,7 +119,6 @@ LCP Profile Data:
     response = client.messages.create(
         model="claude-sonnet-4-6",
         max_tokens=4000,
-        temperature=0.2,
         messages=[{"role": "user", "content": prompt}],
     )
     return response.content[0].text
@@ -276,7 +275,6 @@ if 'roadmap' in st.session_state or 'definitions' in st.session_state:
                 response = client.messages.create(
                     model="claude-sonnet-4-6",
                     max_tokens=500,
-                    temperature=0.3,
                     messages=[{"role": "user", "content": q_prompt}],
                 )
                 st.info(f"**Pro Tip:** {response.content[0].text}")
